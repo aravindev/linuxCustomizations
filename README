@@ -1,3 +1,4 @@
+README
 add symbolic links as below:
 > ln -s /home/ev/git/linuxCustomizations/.bashrc /home/ev/.bashrc
 > ln -s /home/ev/git/linuxCustomizations/solarized.vim /home/ev/.vim/colors/solarized.vim
