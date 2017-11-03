@@ -121,6 +121,8 @@ alias clc='clear'
 alias gpu_load='sudo modprobe amdgpu dpm=1'
 alias powerconf='sudo ~/power.sh'
 alias sourcebash='source ~/.bashrc'
+alias swapscreen='xrandr  --output HDMI-1 --auto --left-of eDP-1'
+alias setgamma='xrandr --output eDP-1 --gamma 2:2:2'
 
 #ROS
 export EDITOR='vim'
@@ -135,9 +137,9 @@ export GIT=/home/ev/git
 export TX1_ver=28
 export TX1_user=ubuntu
 export TX1_IP=85.229.255.159
-alias kload='sshpass -p "ubuntu" scp $TX1_SOURCEDIR/Pleiades_LT4.tgz $TX1_user@$TX1_IP:/home/$TX1_user/Kernels/'
+alias kload='sshpass -p "$TX1_user" scp $TX1_SOURCEDIR/Pleiades_L4T.tgz $TX1_user@$TX1_IP:/home/$TX1_user/Kernels/'
 alias connectTX1='sshpass -p "$TX1_user" ssh -Y $TX1_IP -l $TX1_user -o ServerAliveInterval=30'
-alias mountTX1='sshpass -p "ubuntu" sshfs ubuntu@$TX1_IP:/home/ubuntu/ /home/ev/mount'
+alias mountTX1='sshfs $TX1_user@$TX1_IP:/home/$TX1_user/ /home/ev/mount'
 
 if [ "$TX1_ver" = 24 ]; then
 	export CROSS_COMPILE=/opt/linaro/gcc-linaro-5.4.1-2017.01-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
